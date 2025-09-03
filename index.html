@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leroy Sequeira - Faculty & Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2Lh5vKq/T9Q/A8lYkF1yQJ22vJ0S5u0I4eY5Vw+T+N2s9w2QvL3m2z5kQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-bg': '#F3F4F6',
+                        'dark-text': '#1F2937',
+                        'dark-accent': '#111827',
+                        'gold-accent': '#FFD700',
+                        'button-email': '#FFD700',
+                        'button-whatsapp': '#25D366',
+                        'button-linkedin': '#0A66C2',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%, 100%': { 'box-shadow': '0 0 5px', 'opacity': '0.6' },
+                            '50%': { 'box-shadow': '0 0 20px', 'opacity': '1' },
+                        }
+                    },
+                    animation: {
+                        'glow-slow': 'glow 3s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-gold-glow {
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+            position: relative;
+        }
+
+        .text-gold-glow::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+            animation: glow-line 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-line {
+            0%, 100% { transform: scaleX(0); opacity: 0; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+            transition: all 0.5s ease-out;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .btn-glow:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.8;
+        }
+
+        .btn-glow.gold:hover {
+            box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+        }
+
+        .btn-glow.green:hover {
+            box-shadow: 0 0 10px #25D366, 0 0 20px #25D366;
+        }
+
+        .btn-glow.blue:hover {
+            box-shadow: 0 0 10px #0A66C2, 0 0 20px #0A66C2;
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-fade.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-dark-text overflow-x-hidden">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md p-4">
+        <nav class="container mx-auto flex items-center justify-between flex-wrap">
+            <a href="#home" class="text-2xl font-bold text-dark-accent hover:text-gold-accent transition-colors duration-300">Leroy Sequeira</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-dark-text hover:text-gold-accent transition-colors duration-300">About</a>
+                <a href="#experience" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Experience</a>
+                <a href="#education" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Education</a>
+                <a href="#skills" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Skills</a>
+                <a href="#achievements" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Achievements</a>
+                <a href="#volunteering" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Volunteering</a>
+                <a href="#contact" class="text-dark-text hover:text-gold-accent transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 space-y-24">
+
+        <!-- Home/Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 section-fade">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Left Column (Text & Buttons) -->
+                <div class="space-y-6 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Empowering Students in <span class="text-gold-accent text-gold-glow">Hospitality</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl font-medium text-gray-700">Faculty · Researcher · Mentor</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-6 justify-center md:justify-start">
+                        <a href="mailto:leroy.leroysequeira@gmail.com" class="btn-glow gold bg-gold-accent text-dark-accent h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fas fa-envelope text-xl"></i></a>
+                        <a href="https://wa.me/918120253662" target="_blank" class="btn-glow green bg-button-whatsapp text-white h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a href="https://www.linkedin.com/in/leroy-sequeira-877b521b1" target="_blank" class="btn-glow blue bg-button-linkedin text-white h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+                <!-- Right Column (Photo) -->
+                <div class="flex justify-center items-center">
+                    <div class="p-2 rounded-full border-2 border-gold-accent shadow-lg shadow-gold-accent/50 animate-glow-slow">
+                        <img src="myphoto.jpg" alt="Leroy Sequeira Profile" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="text-center section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-4">About Me</h2>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
+                I aim to leverage my interpersonal and analytical skills to deliver high-quality education and contribute to student success through practical, industry-aligned training.
+            </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Experience</h2>
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <!-- Faculty Role -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent">Faculty – Front Office</h3>
+                    <p class="text-gray-700">State Institute of Hotel Management, Jabalpur (2024 – Present)</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                        <li>Conducted comprehensive training for front office operations.</li>
+                        <li>Developed curriculum enhancements improving student satisfaction and engagement.</li>
+                    </ul>
+                </div>
+                <!-- Assistant Professor Role -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent">Assistant Professor</h3>
+                    <p class="text-gray-700">ITM Skills University, Mumbai (Aug 2023 – Jan 2024)</p>
+                    <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                        <li>Delivered lectures on hospitality management and advanced operational techniques.</li>
+                        <li>Mentored research projects resulting in successful publications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Education</h2>
+            <div class="space-y-6 max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent">Ph.D. (Pursuing) – Hospitality</h3>
+                    <p class="text-gray-700">Amity University Rajasthan, Jaipur (2024–2028)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent">M.Sc. – Hotel Administration</h3>
+                    <p class="text-gray-700">Dr. Ambedkar Institute of Hotel Management, Chandigarh (2021–2023)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent">B.Sc. – Hospitality & Hotel Administration</h3>
+                    <p class="text-gray-700">Institute of Hotel Management, Silvassa (2018–2021)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Strengths Section -->
+        <section id="skills" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Skills & Strengths</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent mb-4">Skills</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Guest Service, Interpersonal Skills, Communication, Collaboration, Adaptability</li>
+                        <li>PowerPoint (<span class="text-dark-accent">Expert</span>)</li>
+                        <li>Excel (<span class="text-dark-accent">Intermediate</span>)</li>
+                        <li>Word (<span class="text-dark-accent">Intermediate</span>)</li>
+                        <li>JAVA & SQL (<span class="text-dark-accent">Basic</span>)</li>
+                        <li>SPSS 22 (<span class="text-dark-accent">Basic</span>)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gold-accent mb-4">Strengths</h3>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Punctuality</li>
+                        <li>Excellence through hard work</li>
+                        <li>Strong communication</li>
+                        <li>Teamwork</li>
+                        <li>Action-oriented</li>
+                        <li>Exploring new ways of doing things</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Achievements</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-2xl mx-auto">
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>School Head Student (School Captain)</li>
+                    <li>Inter School Debate Moderator</li>
+                    <li>Intra School Extempore – First Position</li>
+                    <li>Intra School Elocution – Second Position</li>
+                    <li>State/UT Level Speech (National Youth Parliament)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+        <section id="volunteering" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Volunteering</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-2xl mx-auto">
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>2018 – PM Visit (Team Leader)</li>
+                    <li>2019 – President Visit (Floor Supervisor)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-fade">
+            <h2 class="text-3xl font-bold text-dark-accent mb-8 text-center">Get in Touch</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-md mx-auto text-center">
+                <div class="space-y-4 text-lg text-gray-700">
+                    <p><span class="font-semibold text-gold-accent">Phone:</span> +91 81202 53662</p>
+                    <p><span class="font-semibold text-gold-accent">Email:</span> leroy.leroysequeira@gmail.com</p>
+                    <p><span class="font-semibold text-gold-accent">LinkedIn:</span> linkedin.com/in/leroy-sequeira-877b521b1</p>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8 justify-center">
+                    <a href="mailto:leroy.leroysequeira@gmail.com" class="btn-glow gold bg-gold-accent text-dark-accent h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fas fa-envelope text-xl"></i></a>
+                    <a href="https://wa.me/918120253662" target="_blank" class="btn-glow green bg-button-whatsapp text-white h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/leroy-sequeira-877b521b1" target="_blank" class="btn-glow blue bg-button-linkedin text-white h-14 w-14 flex items-center justify-center rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-600 p-8 mt-12">
+        <p>&copy; <span id="currentYear"></span> Leroy Sequeira. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the current year and set it in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Intersection Observer for fade-in/slide-up animations
+        const sections = document.querySelectorAll('.section-fade');
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.2 // when 20% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
